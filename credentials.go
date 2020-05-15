@@ -37,6 +37,8 @@ func (jenkins *Jenkins) CreateCredentialsSecret(scope, id, description, secret s
 		Class:       "org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl",
 	}
 
+	fmt.Println(m)
+
 	b := new(bytes.Buffer)
 	json.NewEncoder(b).Encode(m)
 	jsonPayload := `{"": "0", "credentials":` + b.String() + `}`
