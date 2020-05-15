@@ -47,6 +47,7 @@ func (jenkins *Jenkins) CreateCredentialsSecret(scope, id, description, secret s
 
 func (jenkins *Jenkins) postForm(path string, additionalHeader map[string]string, params url.Values, data url.Values, body interface{}) error {
 	requestURL := jenkins.baseUrl + path
+	fmt.Println(requestURL)
 	if params != nil {
 		queryString := params.Encode()
 		if queryString != "" {
